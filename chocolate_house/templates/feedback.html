@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocolate House - Customer Feedback</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Chocolate House - Customer Feedback</h1>
+    </header>
+    
+    <!-- Form for Adding Feedback -->
+    <section id="add-feedback-form">
+        <h2>Provide Your Feedback</h2>
+        <form action="/feedback" method="POST">
+            <label for="customer_name">Your Name:</label>
+            <input type="text" id="customer_name" name="customer_name" required><br><br>
+
+            <label for="flavor_suggestion">Flavor Suggestion:</label>
+            <input type="text" id="flavor_suggestion" name="flavor_suggestion"><br><br>
+
+            <label for="allergy_concern">Allergy Concern:</label>
+            <input type="text" id="allergy_concern" name="allergy_concern"><br><br>
+
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </section>
+    
+    <!-- List of Feedback -->
+    <section id="feedback-list">
+        <h2>Customer Feedback:</h2>
+        <ul>
+            {% for feedback in feedbacks %}
+                <li>
+                    <strong>{{ feedback[1] }}</strong><br>
+                    Suggested Flavor: {{ feedback[2] }}<br>
+                    Allergy Concern: {{ feedback[3] }}
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Chocolate House</p>
+    </footer>
+</body>
+</html>

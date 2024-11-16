@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocolate House</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Chocolate House</h1>
+    </header>
+    
+    <!-- Form for Adding New Flavor -->
+    <section id="add-flavor-form">
+        <h2>Add a New Flavor</h2>
+        <form action="/flavors" method="POST">
+            <label for="flavor_name">Flavor Name:</label>
+            <input type="text" id="flavor_name" name="flavor_name" required><br><br>
+
+            <label for="availability">Availability:</label>
+            <select id="availability" name="availability" required>
+                <option value="1">Available</option>
+                <option value="0">Not Available</option>
+            </select><br><br>
+
+            <label for="start_date">Start Date:</label>
+            <input type="date" id="start_date" name="start_date" required><br><br>
+
+            <label for="end_date">End Date:</label>
+            <input type="date" id="end_date" name="end_date" required><br><br>
+
+            <button type="submit">Add Flavor</button>
+        </form>
+    </section>
+    
+    <!-- List of Flavors -->
+    <section id="flavors-list">
+        <h2>Ingredient Inventory:</h2>
+        <ul>
+            {% for flavor in flavors %}
+                <li>
+                    <strong>{{ flavor[1] }}</strong> (Available: {% if flavor[2] == 1 %} Yes {% else %} No {% endif %})<br>
+                    From {{ flavor[3] }} to {{ flavor[4] }}
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Chocolate House</p>
+    </footer>
+</body>
+</html>

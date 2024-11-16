@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocolate House - Ingredient Inventory</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Chocolate House - Ingredient Inventory</h1>
+    </header>
+    
+    <!-- Form for Adding New Ingredient -->
+    <section id="add-ingredient-form">
+        <h2>Add a New Ingredient</h2>
+        <form action="/ingredients" method="POST">
+            <label for="ingredient_name">Ingredient Name:</label>
+            <input type="text" id="ingredient_name" name="ingredient_name" required><br><br>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" required><br><br>
+
+            <label for="unit">Unit:</label>
+            <input type="text" id="unit" name="unit" required><br><br>
+
+            <button type="submit">Add Ingredient</button>
+        </form>
+    </section>
+    
+    <!-- List of Ingredients -->
+    <section id="ingredients-list">
+        <h2>Ingredients:</h2>
+        <ul>
+            {% for ingredient in ingredients %}
+                <li>
+                    <strong>{{ ingredient[1] }}</strong> ({{ ingredient[2] }} {{ ingredient[3] }})
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Chocolate House</p>
+    </footer>
+</body>
+</html>

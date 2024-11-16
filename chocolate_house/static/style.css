@@ -1,0 +1,92 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #d2691e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer {
+    background-color: #d2691e;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+h1, h2 {
+    margin: 0;
+}
+
+h2 {
+    color: #d2691e;
+}
+
+/* Add Flavor Form */
+#add-flavor-form {
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#add-flavor-form label {
+    font-weight: bold;
+}
+
+#add-flavor-form input,
+#add-flavor-form select {
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#add-flavor-form button {
+    background-color: #ea4412;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+#add-flavor-form button:hover {
+    background-color: #9c55e2;
+}
+
+/* Flavors List */
+#flavors-list {
+    margin: 20px;
+}
+
+#flavors-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#flavors-list li {
+    background-color: white;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#flavors-list li strong {
+    color: #b11ed2;
+}
